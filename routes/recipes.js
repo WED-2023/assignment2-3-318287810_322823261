@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+require("dotenv").config();
 const recipes_utils = require("./utils/recipes_utils");
 
 router.get("/", (req, res) => res.send("im here"));
@@ -18,7 +19,7 @@ router.get("/search", async (req, res, next) => {
     res.send(results);
   } catch (error) {
     next(error);
-  }
+  }});
 
 /**
  * This path returns a full details of a recipe by its id
